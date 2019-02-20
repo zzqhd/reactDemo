@@ -1,0 +1,13 @@
+.red {
+    color: red;
+}
+
+.todoList {
+    padding: 10px;
+    background-color: aqua;
+
+}
+
+.todoList li {
+    line-height: 60px;
+}
