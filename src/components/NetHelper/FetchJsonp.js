@@ -20,7 +20,7 @@ class FetchJsonp extends React.Component{
             .then(function(response) {
                 return response.json()
             }).then((json) => {
-            console.log('parsed json', json)
+            console.log('parsed json', json);
             this.setState({
 
                 dataList: json.result
@@ -29,7 +29,7 @@ class FetchJsonp extends React.Component{
         }).catch(function(ex) {
             console.log('parsing failed', ex)
         })
-    }
+    };
 
 
     render() {

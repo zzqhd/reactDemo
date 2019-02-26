@@ -28,7 +28,7 @@ class MyAxios extends React.Component{
             .then(function () {
                 // always executed
             });
-    }
+    };
 
     render() {
         return (

@@ -21,10 +21,10 @@ class TodoList extends Component{
         this.refs.ref1.value = '';
         this.setState({
             dataList: tempList,
-        })
+        });
         // localStorage.setItem(,JSON.stringify(tempList));
         Mystorage.setStorage("todoList",tempList)
-    }
+    };
     clickActionDelete = (key)=> {
         console.log("删除下标：" + key);
         var tempList = this.state.dataList;
@@ -33,14 +33,14 @@ class TodoList extends Component{
         this.setState({
             dataList: tempList,
         })
-    }
+    };
     checkBoxChange = (key) => {
         var tempList = this.state.dataList;
         tempList[key].checked = !tempList[key].checked;
         this.setState({
             dataList: tempList,
         })
-    }
+    };
 
     componentDidMount() {
         var  tempList = Mystorage.getStorage("todoList");
@@ -56,7 +56,7 @@ class TodoList extends Component{
         if (e.keyCode == "13") {
             this.clickActionAdd(e);
         }
-    }
+    };
 
     render() {
         return (

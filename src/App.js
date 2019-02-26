@@ -8,6 +8,9 @@ import FetchJsonp from './components/NetHelper/FetchJsonp'
 import SuperComponent from './components/SuperChild/superComponent'
 import RouterHome from './Router/components/RouterHome'
 import RouteContent from './Router/components/RouterNextPage'
+import './assets/css/app.css'
+import HomeOrder    from './project_order/HomeOrder'
+import OrderContent from './project_order/OrderContent'
 
 class App extends Component {
 
@@ -16,14 +19,17 @@ class App extends Component {
     return (
         <Router>
             <div>
-                <ul>
-                    <li> <Link to="/">Home</Link> </li>
-                    <li> <Link to="/Home">Home</Link> </li>
-                    <li> <Link to="/TodoList">TodoList</Link> </li>
-                    <li> <Link to="/SuperComponent">父子组件传值</Link> </li>
-                    <li> <Link to="/MyAxios">MyAxios</Link> </li>
-                    <li> <Link to="/FetchJsonp">FetchJsonp</Link> </li>
-                </ul>
+                <header className="title">
+
+                    <Link to="/">Home</Link>
+                    <Link to="/Home">Home</Link>
+                    <Link to="/TodoList">TodoList</Link>
+                    <Link to="/SuperComponent">父子组件传值</Link>
+                    <Link to="/MyAxios">MyAxios</Link>
+                    <Link to="/FetchJsonp">FetchJsonp</Link>
+                    <Link to='/HomeOrder'> HomeOrder </Link>
+
+                </header>
                 <hr/>
                 <br/>
                 <br/>
@@ -36,11 +42,13 @@ class App extends Component {
                 <Route path="/MyAxios" component={MyAxios} />
                 <Route path="/FetchJsonp" component={FetchJsonp} />
                 <Route path="/RouterHome" component={RouterHome} />
+                <Route path="/HomeOrder" component={HomeOrder} />
                 {/*动态路由*/}
                 <Route path="/RouterContent/:myParams" component={RouteContent} />
                 {/*get路由*/}
                 <Route path="/RouterContent" component={RouteContent} />
-
+                {/*动态路由*/}
+                <Route path="/OrderContent/:id" component={OrderContent} />
             </div>
 
         </Router>

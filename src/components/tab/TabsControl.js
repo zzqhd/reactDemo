@@ -3,7 +3,7 @@ import "./style.css"
 
 class TabsControl extends React.Component{
     constructor(  ){
-        super(  )
+        super(  );
         this.state = {
             currentIndex : 0
         }
@@ -18,7 +18,7 @@ class TabsControl extends React.Component{
     }
 
     render(  ){
-        let _this = this
+        let _this = this;
         return(
             <div>
                 { /* 动态生成Tab导航 */ }

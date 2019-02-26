@@ -36,7 +36,7 @@ class DataBind extends Component{
 
     certainClick = () => {
         alert(this.state.inputValue);
-    }
+    };
     // 获取控件值方法 一：通过event.target.value + state中添加变量
     inputChange = (event) => {
 
@@ -44,7 +44,7 @@ class DataBind extends Component{
         this.setState({
             inputValue : event.target.value,
         });
-    }
+    };
     // 获取控件值方法 二：通过ref获取dom节点 + state中添加变量
     inputChange2 = (event) => {
         console.log('1');
@@ -55,22 +55,22 @@ class DataBind extends Component{
             inputValue: valueTemp,
         });
 
-    }
+    };
     // Keyboard
     keyboardUp= (event) => {
         console.log(event.target.value);
         this.setState({
             keyboardValue: event.target.value,
         })
-    }
+    };
     keyboardClick = (event) => {
         let str = this.state.keyboardValue;
         str = str+'啊';
         this.setState({
             keyboardValue: str,
-        })
+        });
         alert(this.state.keyboardValue);
-    }
+    };
     //form 表单
     formSubmit =(e) => {
         e.preventDefault();
@@ -81,34 +81,34 @@ class DataBind extends Component{
         console.log(this.state.hobbies);
         console.log("备注:"+this.state.info);
 
-    }
+    };
     nameInputChange =(e) => {
         this.setState({
             name: e.target.value,
         })
-    }
+    };
     radioInputChange = (e) => {
         this.setState({
             sex: e.target.value,
         })
-    }
+    };
     cityInputChange = (e) => {
         this.setState({
             city: e.target.value,
         })
-    }
+    };
     hobbyInputChange = (e) => {
         var hobby = this.state.hobbies;
         hobby[e].checked = !hobby[e].checked;
         this.setState({
             hobbies:hobby
         })
-    }
+    };
     textareaChange = (e) => {
         this.setState({
             info: e.target.value,
         })
-    }
+    };
 
     render() {
         return (

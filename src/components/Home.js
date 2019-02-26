@@ -20,7 +20,7 @@ class Home extends Component {
             alertMessage1: '第一种获取方法',
             alertMessage2: '第二种获取方法',
             alertMessage3: '第三种获取方法',
-        }
+        };
         this.run3 = this.run3.bind(this);
     }
 
@@ -34,7 +34,7 @@ class Home extends Component {
     // 第二种获取方法
     run2 = ()=> {
         alert(this.state.alertMessage2);
-    }
+    };
     // 第三种获取方法
     run3(){
         alert(this.state.alertMessage3);
@@ -45,7 +45,7 @@ class Home extends Component {
         this.setState({
             name:str1,
         })
-    }
+    };
 
 
     render() {

@@ -41,9 +41,9 @@ class ChildComponent extends React.Component{
 //defaultProps： 子组件用父组件传过来的值，就
 ChildComponent.defaultProps = {
     msg: "默认的msg"
-}
+};
 ChildComponent.propTypes = {
     msg: propTypes.string,
-}
+};
 
 export default ChildComponent;

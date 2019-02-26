@@ -11,9 +11,10 @@ class RouterNextPage extends  React.Component{
 
     componentDidMount() {
 
-        var syncRouter = this.props.match.params.myParams;
-        var getRouter  = url.parse(this.props.location.search,true).query;
-        console.log(getRouter)
+        let syncRouter = this.props.match.params.myParams;
+        let getRouter  = url.parse(this.props.location.search,true).query;
+
+        console.log(getRouter);
         console.log(this.props.location.search);
         this.setState({
 
