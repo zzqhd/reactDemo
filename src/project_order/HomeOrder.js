@@ -33,8 +33,9 @@ class HomeOrder extends React.Component{
     render() {
         return (
             <div className='Order'>
+                <button> <Link to='/Login'> 跳转登陆 </Link> </button>
 
-                    {
+                {
                         this.state.dataList.map((value, index) => {
                             return <div key={index} className='List'>
                                 <p> {value.title} </p>

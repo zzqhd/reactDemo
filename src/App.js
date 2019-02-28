@@ -11,6 +11,7 @@ import RouteContent from './Router/components/RouterNextPage'
 import './assets/css/app.css'
 import HomeOrder    from './project_order/HomeOrder'
 import OrderContent from './project_order/OrderContent'
+import Login from './project_order/Login'
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ class App extends Component {
                 <Route path="/FetchJsonp" component={FetchJsonp} />
                 <Route path="/RouterHome" component={RouterHome} />
                 <Route path="/HomeOrder" component={HomeOrder} />
+                <Route path="/Login" component={Login} />
                 {/*动态路由*/}
                 <Route path="/RouterContent/:myParams" component={RouteContent} />
                 {/*get路由*/}
