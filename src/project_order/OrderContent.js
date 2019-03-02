@@ -59,6 +59,21 @@ class OrderContent extends React.Component {
                             {/*嵌入html 正确显示*/}
                             <div dangerouslySetInnerHTML={{__html: value.content}}></div>
                             {/*商品详情内容*/}
+
+                            <footer className="pFooter">
+                                <div className="cart">
+                                    <strong>数量:</strong>
+                                    <div className="cart_num">
+                                        <div className="input_left">-</div>
+                                        <div className="input_center">
+                                            <input type="text"  readOnly="readonly" value="1" name="num" id="num" />
+                                        </div>
+                                        <div className="input_right">+</div>
+                                    </div>
+                                </div>
+
+                                <button className="addcart">加入购物车</button>
+                            </footer>
                         </div>
 
                     })

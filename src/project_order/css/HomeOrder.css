@@ -75,4 +75,64 @@ input {
     padding-right: 10px;
 }
 
+.pFooter {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    /*  react 默认从上往下排列，若需要横向排列则需要改变display为flex，flex默认方向为横向*/
+    display: flex;
+    height: 4.4rem;
+    border-top: 1px solid #eee;
+}
+.pFooter .cart {
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+    /*flex: 1;*/
+}
+.pFooter .cart .cart_num {
+    display: flex;
+}
 
+.pFooter .cart strong {
+
+    flex: 1;
+    font-size: 1.6rem;
+    padding: 0rem .5rem;
+}
+
+.pFooter .cart .cart_num .input_left , .pFooter .cart .cart_num .input_right {
+    width: 2.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    text-align: center;
+    color: red;
+    border: 1px solid #eee;
+    font-size: 2.4rem;
+}
+
+.pFooter .cart .cart_num .input_center input {
+    width: 2rem;
+    width: 100%;
+    height: 2.8rem;
+    /*文字对齐是否居中居左*/
+    text-align: center;
+    /*border none设置的是四条边的，和下面的有设置先后区别*/
+    border: none;
+    /*上边界 1px宽度，实线，颜色eee*/
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+}
+
+.pFooter .addcart {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: fixed;
+    height: 3rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    right: 0px;
+}
