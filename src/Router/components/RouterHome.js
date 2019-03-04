@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import RouterNestHome from "../RouterNest/RouterNestHome";
 
 class RouterHome extends  React.Component{
     constructor(props) {
@@ -39,6 +40,10 @@ class RouterHome extends  React.Component{
                             )
                     })
                     }
+                    <Link to='/RouterNestHome' >跳转嵌套路由 </Link>
+
+                    <Route path='/RouterNestHome' component={RouterNestHome} />
+
                 </ul>
             </div>
         );

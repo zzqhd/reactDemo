@@ -111,6 +111,9 @@ input {
     font-size: 2.4rem;
 }
 
+.pFooter .cart .cart_num .input_center {
+    display: flex;
+}
 .pFooter .cart .cart_num .input_center input {
     width: 2rem;
     width: 100%;

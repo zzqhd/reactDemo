@@ -12,7 +12,8 @@ import './assets/css/app.css'
 import HomeOrder    from './project_order/HomeOrder'
 import OrderContent from './project_order/OrderContent'
 import Login from './project_order/Login'
-
+import RouterNestHome from "./Router/RouterNest/RouterNestHome";
+// import User from  './Router/RouterNest/User'
 class App extends Component {
 
   // render 模版  jsx,
@@ -21,36 +22,37 @@ class App extends Component {
         <Router>
             <div>
                 <header className="title">
-
-                    <Link to="/">Home</Link>
                     <Link to="/Home">Home</Link>
                     <Link to="/TodoList">TodoList</Link>
                     <Link to="/SuperComponent">父子组件传值</Link>
                     <Link to="/MyAxios">MyAxios</Link>
                     <Link to="/FetchJsonp">FetchJsonp</Link>
                     <Link to='/HomeOrder'> HomeOrder </Link>
+                    <Link to='/RouterHome'> RouterHome </Link>
 
                 </header>
+
                 <hr/>
                 <br/>
                 <br/>
                 <hr/>
-                {/*URL path路由 -- 静态路由*/}
-                <Route exact path="/" component={RouterHome} />
-                <Route path="/Home" component={Home} />
-                <Route path="/TodoList" component={TodoList} />
-                <Route path="/SuperComponent" component={SuperComponent} />
-                <Route path="/MyAxios" component={MyAxios} />
-                <Route path="/FetchJsonp" component={FetchJsonp} />
-                <Route path="/RouterHome" component={RouterHome} />
-                <Route path="/HomeOrder" component={HomeOrder} />
-                <Route path="/Login" component={Login} />
+                {/*/!*URL path路由 -- 静态路由*!/*/}
+                <Route exact path="/" component={Home} />
+                <Route path="/Home" component={Home}/>
+                <Route path="/TodoList" component={TodoList}/>
+                <Route path="/SuperComponent" component={SuperComponent}/>
+                <Route path="/MyAxios" component={MyAxios}/>
+                <Route path="/FetchJsonp" component={FetchJsonp}/>
+                <Route path="/RouterHome" component={RouterHome}/>
+                <Route path="/HomeOrder" component={HomeOrder}/>
+                <Route path="/Login" component={Login}/>
+                <Route path="/RouterNestHome" component={RouterNestHome}/>
                 {/*动态路由*/}
-                <Route path="/RouterContent/:myParams" component={RouteContent} />
+                <Route path="/RouterContent/:myParams" component={RouteContent}/>
                 {/*get路由*/}
-                <Route path="/RouterContent" component={RouteContent} />
+                <Route path="/RouterContent" component={RouteContent}/>
                 {/*动态路由*/}
-                <Route path="/OrderContent/:id" component={OrderContent} />
+                <Route path="/OrderContent/:id" component={OrderContent}/>
             </div>
 
         </Router>
