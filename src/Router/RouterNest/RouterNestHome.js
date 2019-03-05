@@ -13,8 +13,14 @@ class RouterNestHome extends  React.Component{
         }
     }
 
+    componentDidMount() {
+
+        console.log(this.props);
+    }
+
     render() {
         return (
+            // this.props.routes.
             <div className="user">
                 <div className="content">
                     <div className="left">
@@ -25,8 +31,15 @@ class RouterNestHome extends  React.Component{
                     </div>
 
                     <div className="right">
-                        <Route exact path="/RouterNestHome/" component={RouterNestSub1}/>
-                        <Route path="/RouterNestHome/RouterNestSub2" component={RouterNestSub2}/>
+                        {/*/!*传统写法，不用路由*!/*/}
+                        {/*<Route exact path="/RouterNestHome/" component={RouterNestSub1}/>*/}
+                        {/*<Route path="/RouterNestHome/RouterNestSub2" component={RouterNestSub2}/>*/}
+                        {
+                            // 路由模块化写法
+                            this.props.routes.map((route,key) =>{
+                                return <Route exact path={route.path} component={route.component} />
+                            })
+                        }
                     </div>
 
                 </div>
@@ -36,22 +49,3 @@ class RouterNestHome extends  React.Component{
 }
 
 export default RouterNestHome
-
-{/*<div>*/}
-{/*RouterNestHome*/}
-{/*<div>*/}
-{/*<Link to='/RouterNestHome/RouterNestSub1'> 子页面1 </Link>*/}
-
-{/*<br />*/}
-{/*<br />*/}
-
-{/*<Link to='/RouterNestHome/RouterNestSub2'> 子页面2 </Link>*/}
-
-{/*</div>*/}
-
-{/*<div>*/}
-{/*<Route path='/RouterNestHome/RouterNestSub1' component={RouterSub1} />*/}
-{/*<Route path='/RouterNestHome/RouterNestSub2' component={RouterSub2} />*/}
-
-{/*</div>*/}
-{/*</div>*/}

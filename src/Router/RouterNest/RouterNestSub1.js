@@ -11,7 +11,7 @@ class RouterNestSub1 extends Component {
     render() {
         return (
             <div className="info">
-                RouterNestSub1
+                嵌套路由1
             </div>
         );
     }
