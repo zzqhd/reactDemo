@@ -1,17 +1,17 @@
-import Home from "../../components/Home";
-import TodoList from "../../components/TodoList";
-import SuperComponent from "../../components/SuperChild/superComponent";
-import MyAxios from "../../components/NetHelper/MyAxios";
-import FetchJsonp from "../../components/NetHelper/FetchJsonp";
-import RouterHome from "../components/RouterHome";
-import HomeOrder from "../../project_order/HomeOrder";
-import Login from "../../project_order/Login";
-import RouterNestHome from "../RouterNest/RouterNestHome";
-import RouteContent from "../components/RouterNextPage";
-import OrderContent from "../../project_order/OrderContent";
-import RouterNestSub1 from "../RouterNest/RouterNestSub1";
-import RouterNestSub2 from "../RouterNest/RouterNestSub2";
-
+import Home from "../components/Home";
+import TodoList from "../components/TodoList";
+import SuperComponent from "../components/SuperChild/superComponent";
+import MyAxios from "../components/NetHelper/MyAxios";
+import FetchJsonp from "../components/NetHelper/FetchJsonp";
+import RouterHome from "../Router/components/RouterHome";
+import HomeOrder from "../project_order/HomeOrder";
+import Login from "../project_order/Login";
+import RouterNestHome from "../Router/RouterNest/RouterNestHome";
+import RouteContent from "../Router/components/RouterNextPage";
+import OrderContent from "../project_order/OrderContent";
+import RouterNestSub1 from "../Router/RouterNest/RouterNestSub1";
+import RouterNestSub2 from "../Router/RouterNest/RouterNestSub2";
+import AntDesign from "../antDesign/AntDesign"
 let routeList = [
     // URL path路由 -- 静态路由
     {
@@ -64,6 +64,10 @@ let routeList = [
                 component:RouterNestSub2,
             }
         ]
+    },
+    {
+        path: '/AntDesign',
+        component: AntDesign,
     },
     // get路由
     {

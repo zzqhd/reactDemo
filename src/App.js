@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import DataBind from './components/DataBind'
 import './assets/css/app.css'
 import OrderContent from './project_order/OrderContent'
-import  RouterList from './Router/model/RouterTotal'
+import  RouterList from './model/RouterTotal'
 
 class App extends Component {
 
@@ -20,6 +20,7 @@ class App extends Component {
                     <Link to="/FetchJsonp">FetchJsonp</Link>
                     <Link to='/HomeOrder'> HomeOrder </Link>
                     <Link to='/RouterHome'> RouterHome </Link>
+                    <Link to='/AntDesign'> AntDesign </Link>
 
                 </header>
                 <hr/>
