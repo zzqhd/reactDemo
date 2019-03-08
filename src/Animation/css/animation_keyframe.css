@@ -1,0 +1,26 @@
+.show1 {
+    opacity: 1;
+    color: red;
+    transition: all 1s ease-in;
+}
+
+/*保存最后一帧*/
+.show2 {
+    animation: animationSimple 2s ease-in forwards;
+}
+/*关键帧动画*/
+@keyframes animationSimple {
+    0% {
+        opacity: 1;
+        color: red;
+    }
+    50% {
+        opacity: 0.5;
+        color: green;
+    }
+    100% {
+        opacity: 0;
+        color: blue;
+    }
+
+}

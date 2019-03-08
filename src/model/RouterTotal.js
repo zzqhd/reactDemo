@@ -12,6 +12,7 @@ import OrderContent from "../project_order/OrderContent";
 import RouterNestSub1 from "../Router/RouterNest/RouterNestSub1";
 import RouterNestSub2 from "../Router/RouterNest/RouterNestSub2";
 import AntDesign from "../antDesign/AntDesign"
+import Animation_keyframe from "../Animation/Animation_keyframe";
 let routeList = [
     // URL path路由 -- 静态路由
     {
@@ -84,6 +85,13 @@ let routeList = [
         path: '/OrderContent/:id',
         component: OrderContent,
     },
+
+
+    {
+        path: '/animation',
+        component: Animation_keyframe,
+    },
+
 ];
 
 

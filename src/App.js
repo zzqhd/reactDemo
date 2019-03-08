@@ -29,13 +29,13 @@ class App extends Component {
 
                         if ( route.routes != null) {
                             if (route.exact) {
-                                return <Route exact path={route.path}  render={
+                                return <Route key={key} exact path={route.path}  render={
                                     props => (
                                         <route.component {...props} routes={route.routes} />
                                     )
                                 } />;
                             } else {
-                                return <Route path={route.path} render={
+                                return <Route key={key} path={route.path} render={
                                     props => (
                                         <route.component {...props} routes={route.routes} />
                                     )
@@ -43,9 +43,9 @@ class App extends Component {
                             }
                         } else  {
                             if (route.exact) {
-                                return <Route exact path={route.path} component={route.component} />;
+                                return <Route key={key} exact path={route.path} component={route.component} />;
                             } else {
-                                return <Route path={route.path} component={route.component}/>;
+                                return <Route key={key} path={route.path} component={route.component}/>;
                             }
                         }
 

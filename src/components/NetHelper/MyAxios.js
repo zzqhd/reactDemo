@@ -13,21 +13,28 @@ class MyAxios extends React.Component{
         console.log("开始获取网络数据");
         var _url = "http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20";
 
-        axios.get(_url)
-            .then( (response) => {
-                // handle success
-                console.log(response.data.result);
-                this.setState({
-                    dataList: response.data.result
-                })
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
+        // axios.get(_url)
+        //     .then( (response) => {
+        //         // handle success
+        //         console.log(response.data.result);
+        //         this.setState({
+        //             dataList: response.data.result
+        //         })
+        //     })
+        //     .catch(function (error) {
+        //         // handle error
+        //         console.log(error);
+        //     })
+        //     .then(function () {
+        //         // always executed
+        //     });
+
+        axios.get('/api').then((res) => {
+            console.log(res.data);
+        }).catch((e)=> {
+            console.log("有错误");
+
+        })
     };
 
     render() {

@@ -9,6 +9,7 @@ class TodoList extends Component{
             dataList: [
             ],
         }
+
     }
     clickActionAdd = (e) => {
         console.log("增加：" + this.refs.ref1.value);
@@ -42,11 +43,17 @@ class TodoList extends Component{
         })
     };
 
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return (nextProps.content != this.props.content);
+    }
+
     componentDidMount() {
         var  tempList = Mystorage.getStorage("todoList");
         if (tempList) {
             this.setState({
                 dataList: tempList,
+            }, ()=> {
+
             })
         }
     }
