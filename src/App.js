@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import DataBind from './components/DataBind'
 import './assets/css/app.css'
 import OrderContent from './project_order/OrderContent'
-import  RouterList from './model/RouterTotal'
+import  RouterList from './Router/RouterTotal'
 
 class App extends Component {
 

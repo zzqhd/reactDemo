@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import '../assets/css/ColorCss.css'
-import Mystorage from '../model/MyStorage'
+import '../../assets/css/ColorCss.css'
+import Mystorage from '../../model/MyStorage.js'
+import { Button,Input} from 'antd';
 
 class TodoList extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            dataList: [
-            ],
+            dataList: [],
         }
 
     }
@@ -22,6 +22,9 @@ class TodoList extends Component{
         this.refs.ref1.value = '';
         this.setState({
             dataList: tempList,
+        },()=>{
+            console.log(this.state)
+
         });
         // localStorage.setItem(,JSON.stringify(tempList));
         Mystorage.setStorage("todoList",tempList)
@@ -33,6 +36,8 @@ class TodoList extends Component{
         this.refs.ref1.value = '';
         this.setState({
             dataList: tempList,
+        },()=>{
+
         })
     };
     checkBoxChange = (key) => {
@@ -43,9 +48,10 @@ class TodoList extends Component{
         })
     };
 
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return (nextProps.content != this.props.content);
-    }
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     console.log(nextProps.state.dataList)
+    //     return (nextProps.dataList != this.props.dataList);
+    // }
 
     componentDidMount() {
         var  tempList = Mystorage.getStorage("todoList");
@@ -53,13 +59,11 @@ class TodoList extends Component{
             this.setState({
                 dataList: tempList,
             }, ()=> {
-
             })
         }
     }
     //键盘按下
     keyboardUpChange = (e) => {
-        console.log(e.keyCode);
         if (e.keyCode == "13") {
             this.clickActionAdd(e);
         }
@@ -67,9 +71,12 @@ class TodoList extends Component{
 
     render() {
         return (
-            <div>
+            <div style={{marginLeft: '20px',marginRight: '20px'}}>
                 <h2> TodoList </h2>
-                <input ref="ref1" onKeyDown={this.keyboardUpChange}/> <button onClick={this.clickActionAdd}> 点击</button>
+                <Input placeholder="增加代办事项"  ref="ref1" onKeyDown={this.keyboardUpChange}
+                       style={{width: '300px', marginBottom: '20px', marginRight: '20px'}}
+                />
+                <Button type="primary" onClick={this.clickActionAdd}> 点击</Button>
                 <hr/>
 
                 未完成
@@ -77,9 +84,13 @@ class TodoList extends Component{
                 <ul className='todoList'>
                     {
                         this.state.dataList.map(function (value,key){
+                            console.log( value);
                             if (!value.checked) {
                                 return (
-                                    <li key={key}> <input type="checkbox" checked={value.checked} onChange={this.checkBoxChange.bind(this,key)} />  {value.title} -- <button onClick={this.clickActionDelete.bind(this, key)}>删除</button>
+                                    <li key={key}>
+                                        <input type="checkbox" checked={value.checked} onChange={this.checkBoxChange.bind(this,key)} />
+                                        {value.title} --
+                                        <button onClick={this.clickActionDelete.bind(this, key)}>删除</button>
 
                                     </li>
                                 )
